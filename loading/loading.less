@@ -1,0 +1,39 @@
+/////////////////////////////////////
+// Loading (Dial)
+/////////////////////////////////////
+
+.loading {
+  height: 32px;
+  width: 32px;
+
+  &::before {
+    background-color: @dial-btn-color;
+    mask: url(@dial-gif) no-repeat center;
+    mask-size: contain;
+    height: 100%;
+    width: 100%;
+    content: "";
+    display: inline-block;
+  }
+
+  &.large {
+    height: 64px;
+    width: 64px;
+  }
+
+  &.small {
+    height: 16px;
+    width: 16px;
+  }
+
+  &.btn {
+    height: 30px;
+
+    &:hover {
+      &::before {
+        background-color: @dial-btn-color-invert;
+      }
+    }
+  }
+}
+

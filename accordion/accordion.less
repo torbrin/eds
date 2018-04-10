@@ -1,0 +1,61 @@
+/////////////////////////////////////
+// Accordion
+/////////////////////////////////////
+@import (reference) "../common/fonts/icon-names";
+
+.accordion {
+  ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+
+  li {
+    padding-bottom: 0;
+    -webkit-user-select: none;
+  }
+
+  .title {
+    padding: 12px 8px;
+    font-weight: @weight-bold;
+    cursor: pointer;
+
+    &:hover {
+      background: @table-hover;
+    }
+
+    &::before {
+      padding: 0 8px;
+      font-family: edsfont;
+      font-size: 16px;
+      vertical-align: middle;
+      float: right;
+    }
+  }
+
+  .opened {
+    color: @text;
+    border-top: 1px solid @gray;
+    border-bottom: 1px solid @gray;
+
+    .content {
+      padding: 0 24px 16px;
+    }
+
+    .title::before {
+      content: @icon-chevron-up;
+    }
+  }
+
+  .closed {
+    color: fade(@text, 80%);
+
+    .title::before {
+      content: @icon-chevron-down;
+    }
+
+    .content {
+      display: none;
+    }
+  }
+}
